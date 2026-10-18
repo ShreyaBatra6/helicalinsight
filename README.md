@@ -74,6 +74,8 @@ Helical Insight connects to virtually any modern data source through native conn
 
 ![Introduction](docs/supported_datasources.png)
 
+**MongoDB (native connector):** see [MONGODB_CONNECTOR.md](MONGODB_CONNECTOR.md) for setup, configuration and testing.
+
 # Helical Insight Comparison with Modern Open Source BI Tools
 
 We have covered in detail comparisons of Helical Insight with open-source BI platforms such as: **Superset**, **Metabase**, **Redash**, **Lightdash**
