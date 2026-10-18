@@ -115,6 +115,17 @@ if ((jsonOfDrillDatasources != null) && drillEnabledTypes) {
 
     staticArray+=staticMongoArray;
 }
+
+// Native MongoDB connector (MongoNativeLoader): available without Apache Drill
+def nativeMongoParameters = ["port": "27017", "hostName": "localhost", "database": "database"]
+resultJSON.driversList += ["driver": "com.helicalinsight.nosql.mongodb", "available": "true",
+                           "url": "mongodb://{{hostName}}:{{port}}/{{database}}", "parameters": nativeMongoParameters]
+staticArray << ["name": "Mongodb", "classifier": "global", "categoryName": "No SQL & Big Data",
+                "categoryType": "nosql_bigdata", "type": "global.jdbc",
+                "driver": "com.helicalinsight.nosql.mongodb",
+                "url": "mongodb://{{hostName}}:{{port}}/{{database}}",
+                "parameters": nativeMongoParameters, "dataSourceProvider": "noSql"]
+
 resultJSON.driversList += ["driver": "dynamicSwitch","showInDatasource":"false", "available": "true", "parameters": [
 
 ]];
